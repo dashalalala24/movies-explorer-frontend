@@ -1,0 +1,81 @@
+.about {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 110px 70px;
+}
+
+.about__text {
+  display: flex;
+  column-gap: 40px;
+}
+
+.about__text-stages {
+  max-width: 550px;
+}
+
+.about__text-title {
+  margin: 0;
+  padding: 70px 0 0;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+}
+
+.about__text-paragraph {
+  margin: 0;
+  padding: 26px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.about__timing {
+  margin: 0;
+  padding: 110px 0 0;
+}
+
+.about__timing__graph {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+}
+
+.about__timing__graph-part {
+  padding: 9px 0;
+  text-align: center;
+}
+
+.about__timing__graph-part_type_back {
+  width: 20%;
+  background-color: #3ddc84;
+  color: #000;
+}
+
+.about__timing__graph-part_type_front {
+  width: 80%;
+  background-color: #303030;
+}
+
+.about__timing__captions {
+  margin: 0;
+  padding: 14px 0 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8b8b8b;
+  display: flex;
+}
+
+.about__timing__caption {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.about__timing__caption_type_back {
+  width: 20%;
+}
+
+.about__timing__caption_type_front {
+  width: 80%;
+}
