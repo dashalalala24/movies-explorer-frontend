@@ -1,11 +1,14 @@
 .techs {
   background-color: #272727;
+}
+
+.techs__container {
   max-width: 1140px;
   margin: 0 auto;
   padding: 100px 70px;
 }
 
-.techs__container {
+.techs__content {
   display: flex;
   flex-direction: column;
   align-items: center;

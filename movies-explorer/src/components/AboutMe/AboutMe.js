@@ -45,7 +45,7 @@ function AboutMe() {
               className='about-me__portfolio-link'
               target='_blank'
               rel='noreferrer'
-              href='https://github.com/dashalalala24/how-to-learn'>
+              href='https://dashalalala24.github.io/how-to-learn'>
               Статичный сайт
               <img
                 className='about-me__link-icon'
@@ -59,7 +59,7 @@ function AboutMe() {
               className='about-me__portfolio-link'
               target='_blank'
               rel='noreferrer'
-              href='https://github.com/dashalalala24/russian-travel'>
+              href='https://dashalalala24.github.io/russian-travel'>
               Адаптивный сайт
               <img
                 className='about-me__link-icon'
@@ -73,7 +73,7 @@ function AboutMe() {
               className='about-me__portfolio-link'
               target='_blank'
               rel='noreferrer'
-              href='https://github.com/dashalalala24/react-mesto-api-full-gha'>
+              href='http://mesto.dashalalala24.nomoredomains.work'>
               Одностраничное приложение
               <img
                 className='about-me__link-icon'
