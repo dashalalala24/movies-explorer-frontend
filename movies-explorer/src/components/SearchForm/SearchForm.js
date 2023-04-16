@@ -8,8 +8,7 @@ function SearchForm() {
     <section className='search-form'>
       <form
         className='search-form__form'
-        name='search-form'
-        noValidate>
+        name='search-form'>
         <input
           className='search-form__input'
           name='search-form-input'

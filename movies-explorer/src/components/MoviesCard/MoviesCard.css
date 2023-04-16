@@ -5,6 +5,7 @@
 .movies-card__pic {
   max-width: 360px;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .movies-card__info {
@@ -17,6 +18,7 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
+  margin: 0;
   padding: 0 0 0 14px;
 }
 
@@ -33,29 +35,91 @@
   position: absolute;
   top: 14px;
   right: 14px;
-  width: 21px;
-  height: 21px;
   border-radius: 30px;
   border: none;
   background: no-repeat center;
   transition: opacity 0.3s;
   cursor: pointer;
-}
-
-.movies-card__button:hover {
-  opacity: 0.8;
-}
-
-.movies-card__button_disabled {
   display: none;
 }
 
-.movies-card__saved-button {
-  background-image: url(../../images/checkmark_icon.svg);
-  background-color: #ee3465;
+.movies-card__button_style_round {
+  width: 21px;
+  height: 21px;
 }
 
-.movies-card__remove-button {
+.movies-card__button_type_to-save {
+  font-size: 10px;
+  line-height: 9px;
+  color: #fff;
+  background-color: #313131;
+  width: 72px;
+  height: 21px;
+}
+
+.movies-card__button_type_to-save:hover {
+  display: block;
+}
+
+.movies-card__button_type_remove {
   background-image: url(../../images/cross_icon.svg);
   background-color: #313131;
+}
+
+.movies-card__button_type_remove:hover {
+  display: block;
+}
+
+.movies-card__button_type_saved {
+  background-image: url(../../images/checkmark_icon.svg);
+  background-color: #ee3465;
+  display: block;
+}
+
+.movies-card__pic:hover ~ .movies-card__button_type_to-save {
+  display: block;
+}
+
+.movies-card__pic:hover ~ .movies-card__button_type_remove {
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  .movies-card__pic {
+    max-width: 339px;
+  }
+
+  .movies-card__info {
+    margin: 9px 0 0;
+  }
+
+  .movies-card__name {
+    padding: 9px 0 0;
+  }
+
+  .movies-card__duration {
+    font-size: 12px;
+    padding: 4px 5px;
+    margin: 11px 0px 0 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .movies-card__pic {
+    max-width: 300px;
+  }
+
+  .movies-card__name {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .movies-card__duration {
+    font-size: 12px;
+    padding: 4px 5px;
+    margin: 11px 0px 0 0;
+  }
+  .movies-card__info {
+    max-width: 300px;
+  }
 }

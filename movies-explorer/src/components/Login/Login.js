@@ -2,9 +2,10 @@ import React from 'react';
 
 import AuthPage from '../AuthPage/AuthPage';
 
-function Login() {
+function Login({ currentPath }) {
   return (
     <AuthPage
+      currentPath={currentPath}
       formName='login'
       title='Рады видеть!'
       buttonText='Войти'

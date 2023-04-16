@@ -2,9 +2,10 @@ import React from 'react';
 
 import AuthPage from '../AuthPage/AuthPage';
 
-function Register() {
+function Register({ currentPath }) {
   return (
     <AuthPage
+      currentPath={currentPath}
       formName='register'
       title='Добро пожаловать!'
       buttonText='Зарегистрироваться'
@@ -68,7 +69,7 @@ function Register() {
         <span
           id='password-input-error'
           className='auth__error password-input-error'>
-          {/* Здесь будут ошибки */}
+          Здесь будут ошибки
         </span>
       </div>
     </AuthPage>

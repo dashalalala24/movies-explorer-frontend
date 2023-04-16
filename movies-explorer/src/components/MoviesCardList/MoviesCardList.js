@@ -2,22 +2,47 @@ import React from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
 
-function MoviesCardList() {
+function MoviesCardList({ buttonsHtml, onPicClick }) {
   return (
-    <div className='movies-card-list'>
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-      <MoviesCard />
-    </div>
+    <section className='movies-card-list'>
+      {/* пока так */}
+      <MoviesCard
+        buttonsHtml={buttonsHtml}
+        onPicClick={onPicClick}
+      />
+      <MoviesCard
+        buttonsHtml={buttonsHtml}
+        onPicClick={onPicClick}
+      />
+      <MoviesCard
+        buttonsHtml={buttonsHtml}
+        onPicClick={onPicClick}
+      />
+      <MoviesCard
+        buttonsHtml={buttonsHtml}
+        onPicClick={onPicClick}
+      />
+      <MoviesCard
+        buttonsHtml={buttonsHtml}
+        onPicClick={onPicClick}
+      />
+      <MoviesCard
+        buttonsHtml={buttonsHtml}
+        onPicClick={onPicClick}
+      />
+      <MoviesCard
+        buttonsHtml={buttonsHtml}
+        onPicClick={onPicClick}
+      />
+      <MoviesCard
+        buttonsHtml={buttonsHtml}
+        onPicClick={onPicClick}
+      />
+      <MoviesCard
+        buttonsHtml={buttonsHtml}
+        onPicClick={onPicClick}
+      />
+    </section>
   );
 }
 

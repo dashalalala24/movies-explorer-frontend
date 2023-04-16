@@ -7,3 +7,17 @@
   letter-spacing: -0.04em;
   border-bottom: 1px solid #dadada;
 }
+
+@media screen and (max-width: 768px) {
+  .section-title {
+    padding: 0 0 22px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .section-title {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 0 0 28.5px;
+  }
+}

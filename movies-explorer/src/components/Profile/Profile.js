@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './Profile.css';
 
-function Profile() {
+function Profile({ isFormActive, activateForm }) {
   // const navigate = useNavigate();
 
   // function goBack() {
@@ -12,18 +12,17 @@ function Profile() {
   // }
 
   return (
-    <section className='profile'>
+    <main className='profile'>
       <form
         className='profile__form'
         name='edit-profile'
-        noValidate
         autoComplete='off'>
         <div className='profile__container'>
           <h3 className='profile__title'>{`Привет, exampleName!`}</h3>
           <div className='profile__inputs-container'>
             <div className='profile__input-container'>
               <label
-                for='name-input'
+                htmlFor='name-input'
                 className='profile__label'>
                 Имя
               </label>
@@ -37,12 +36,12 @@ function Profile() {
                 maxLength={30}
                 value='exampleName'
                 required
-                disabled
+                disabled={!isFormActive}
               />
             </div>
             <div className='profile__input-container'>
               <label
-                for='email-input'
+                htmlFor='email-input'
                 className='profile__label'>
                 E-mail
               </label>
@@ -54,7 +53,7 @@ function Profile() {
                 autoComplete='off'
                 value='example@mail.ru'
                 required
-                disabled
+                disabled={!isFormActive}
               />
             </div>
           </div>
@@ -69,21 +68,23 @@ function Profile() {
             в 3 строки например. */}
           </span>
           <button
-            // className='profile__button profile__edit-button profile__submit-button profile__submit-button_disabled'
-            // className='profile__button profile__edit-button profile__submit-button'
-            className='profile__button profile__edit-button'
-            type='button'>
+            className={`profile__button profile__edit-button ${
+              isFormActive ? 'profile__submit-button profile__submit-button_disabled' : ''
+            }`}
+            type='button'
+            onClick={activateForm}>
             Редактировать
           </button>
           <Link
             to='/'
-            // className='profile__button profile__logout-button profile__logout-button_disabled'
-            className='profile__button profile__logout-button'>
+            className={`profile__button profile__logout-button ${
+              isFormActive ? 'profile__logout-button_disabled' : ''
+            }`}>
             Выйти из аккаунта
           </Link>
         </div>
       </form>
-    </section>
+    </main>
   );
 }
 

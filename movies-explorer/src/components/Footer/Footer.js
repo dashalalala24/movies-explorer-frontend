@@ -23,7 +23,7 @@ function Footer() {
                       Яндекс.Практикум
                     </a>
                   </li>
-                  <li className='footer__nav-lis-item'>
+                  <li className='footer__nav-list-item'>
                     <a
                       className='footer__link'
                       target='_blank'
@@ -56,7 +56,7 @@ function Footer() {
                       Яндекс.Практикум
                     </a>
                   </li>
-                  <li className='footer__nav-lis-item'>
+                  <li className='footer__nav-list-item'>
                     <a
                       className='footer__link'
                       target='_blank'
@@ -89,7 +89,7 @@ function Footer() {
                       Яндекс.Практикум
                     </a>
                   </li>
-                  <li className='footer__nav-lis-item'>
+                  <li className='footer__nav-list-item'>
                     <a
                       className='footer__link'
                       target='_blank'

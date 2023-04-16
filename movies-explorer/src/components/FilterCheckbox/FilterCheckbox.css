@@ -55,3 +55,25 @@
   background-color: #fff;
   transition: 0.3s;
 }
+
+@media screen and (max-width: 1024px) {
+  .filter-checkbox {
+    margin: 38px 0 0;
+  }
+
+  .filter-checkbox__name {
+    line-height: 21px;
+    padding: 0 10px 0 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .filter-checkbox {
+    margin: 44px 0 0;
+  }
+
+  .filter-checkbox__name {
+    font-size: 11px;
+    padding: 0 13px 0 0;
+  }
+}

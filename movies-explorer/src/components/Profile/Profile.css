@@ -6,7 +6,6 @@
 .profile__form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 626px;
   min-width: 32vw;
   max-width: 410px;
@@ -20,7 +19,7 @@
   line-height: 29px;
   text-align: center;
   margin: 0;
-  padding: 74px 0 0;
+  padding: 70px 0 0;
   max-width: 410px;
 }
 
@@ -77,8 +76,8 @@
   font-size: 11px;
   line-height: 13px;
   color: #ee3465;
-  margin: 146px 0 0;
-  min-height: 52px;
+  margin: 145px 0 0;
+  min-height: 58px;
   max-width: 410px;
   text-align: center;
 }
@@ -100,7 +99,7 @@
 .profile__edit-button {
   color: #fff;
   padding: 0;
-  margin: 20px 0 0;
+  /* margin: 20px 0 0; */
 }
 
 .profile__submit-button {
@@ -139,4 +138,21 @@
 
 .profile__logout-button_disabled {
   display: none;
+}
+
+@media screen and (max-width: 450px) {
+  .profile__title {
+    padding: 65px 0 0;
+  }
+
+  .profile__form {
+    min-height: 85vh;
+    min-width: 81vw;
+    max-width: 260px;
+    justify-content: space-between;
+  }
+
+  .profile__input-container:first-of-type {
+    padding: 64px 0 0;
+  }
 }

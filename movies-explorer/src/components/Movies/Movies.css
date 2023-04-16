@@ -14,11 +14,24 @@
   border: none;
   border-radius: 6px;
   padding: 11px 60px;
-  margin: 78px 0 0;
+  margin: 67px 0 79px;
   transition: opacity 0.3s;
 }
 
 .movies__more-button:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .movies__more-button {
+    margin: 48px 0 79px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .movies__more-button {
+    margin: 61px 0 78px;
+    min-width: 240px;
+  }
 }

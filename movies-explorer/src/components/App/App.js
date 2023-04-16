@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import Profile from '../Profile/Profile';
@@ -14,12 +14,28 @@ import Preloader from '../Preloader/Preloader';
 import './App.css';
 
 function App() {
-  const [isPageLoading, setIsPageLoading] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname;
 
-  // useEffect(() => {
-  //   setIsPageLoading(true);
-  // }, []);
+  // для проверки прелоадера
+  // const [isPageLoading, setIsPageLoading] = useState(true);
+  const [isPageLoading, setIsPageLoading] = useState(false);
+
+  //для проверки верстки кнопок в секции movies
+  const [isSaved, setIsSaved] = useState(true);
+  function handleCardSaved() {
+    setIsSaved(!isSaved);
+  }
+
+  const [isBurgerActive, setIsBurgerActive] = useState(false);
+  function handleOpenHeader() {
+    setIsBurgerActive(!isBurgerActive);
+  }
+
+  const [isFormActive, setIsFormActive] = useState(false);
+  function activateForm() {
+    setIsFormActive(true);
+  }
 
   return (
     <div className='page'>
@@ -27,7 +43,11 @@ function App() {
         <Preloader />
       ) : (
         <>
-          <Header />
+          <Header
+            currentPath={currentPath}
+            onOpenMenu={handleOpenHeader}
+            isBurgerActive={isBurgerActive}
+          />
           <Routes>
             <Route
               path='/'
@@ -35,23 +55,33 @@ function App() {
             />
             <Route
               path='/profile'
-              element={<Profile />}
+              element={
+                <Profile
+                  isFormActive={isFormActive}
+                  activateForm={activateForm}
+                />
+              }
             />
             <Route
               path='/movies'
-              element={<Movies />}
+              element={
+                <Movies
+                  currentPath={currentPath}
+                  isSaved={isSaved}
+                />
+              }
             />
             <Route
               path='/saved-movies'
-              element={<SavedMovies />}
+              element={<SavedMovies currentPath={currentPath} />}
             />
             <Route
               path='/signin'
-              element={<Login />}
+              element={<Login currentPath={currentPath} />}
             />
             <Route
               path='/signup'
-              element={<Register />}
+              element={<Register currentPath={currentPath} />}
             />
 
             <Route
