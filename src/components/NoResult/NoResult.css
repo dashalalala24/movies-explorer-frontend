@@ -1,0 +1,12 @@
+.no-result {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.no-result__text {
+  margin: 0;
+  padding: 150px 0;
+  text-align: center;
+}
