@@ -24,6 +24,7 @@ function Register({ currentPath }) {
           type='name'
           name='name'
           autoComplete='off'
+          placeholder='Введите имя'
           minLength={2}
           maxLength={30}
           required
@@ -45,6 +46,7 @@ function Register({ currentPath }) {
           type='email'
           name='email'
           autoComplete='off'
+          placeholder='Введите электронную почту'
           required
         />
         <span
@@ -64,6 +66,7 @@ function Register({ currentPath }) {
           type='password'
           name='password'
           autoComplete='off'
+          placeholder='Введите пароль'
           required
         />
         <span

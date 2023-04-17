@@ -24,6 +24,7 @@ function Login({ currentPath }) {
           type='email'
           name='email'
           autoComplete='off'
+          placeholder='Введите электронную почту'
           required
         />
         <span
@@ -43,6 +44,7 @@ function Login({ currentPath }) {
           type='password'
           name='password'
           autoComplete='off'
+          placeholder='Введите пароль'
           required
         />
         <span

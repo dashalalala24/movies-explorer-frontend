@@ -34,6 +34,7 @@ function Profile({ isFormActive, activateForm }) {
                 autoComplete='off'
                 minLength={2}
                 maxLength={30}
+                placeholder='Введите имя  '
                 value='exampleName'
                 required
                 disabled={!isFormActive}
@@ -51,6 +52,7 @@ function Profile({ isFormActive, activateForm }) {
                 type='email'
                 name='email'
                 autoComplete='off'
+                placeholder='Введите электронную почту  '
                 value='example@mail.ru'
                 required
                 disabled={!isFormActive}
@@ -73,7 +75,7 @@ function Profile({ isFormActive, activateForm }) {
             }`}
             type='button'
             onClick={activateForm}>
-            Редактировать
+            {isFormActive ? 'Сохранить' : 'Редактировать'}
           </button>
           <Link
             to='/'

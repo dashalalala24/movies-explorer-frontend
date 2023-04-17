@@ -50,15 +50,23 @@
   box-sizing: border-box;
 }
 
-/* .auth__input:focus {
+.auth__input:focus {
   outline: none;
-  border: 1px solid #ee3465;
+  border: 1px solid #4285f4;
   border-radius: 8px;
   box-sizing: border-box;
   max-height: 46px;
   max-width: 396px;
   padding: 14px 0 14px 14px;
-} */
+}
+
+.auth__input::placeholder {
+  visibility: hidden;
+}
+
+.auth__input:focus::placeholder {
+  visibility: visible;
+}
 
 .auth__input:focus {
   outline: none;
