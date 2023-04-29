@@ -78,6 +78,10 @@
   max-height: 30px;
 }
 
+.navigation__profile-link-icon_type_landing {
+  background-color: #3ddc84;
+}
+
 @media screen and (max-width: 1024px) {
   .navigation__container {
     padding: 18px 30px;
@@ -100,7 +104,7 @@
   .navigation_active {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: start;
+    justify-content: flex-start;
     width: calc(520 / 768 * 100%);
     box-sizing: border-box;
     height: 100vh;

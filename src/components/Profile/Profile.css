@@ -1,5 +1,6 @@
 .profile {
   max-width: 410px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -99,7 +100,6 @@
 .profile__edit-button {
   color: #fff;
   padding: 0;
-  /* margin: 20px 0 0; */
 }
 
 .profile__submit-button {
@@ -119,11 +119,11 @@
   opacity: 0.8;
 }
 
-.profile__submit-button_disabled {
+.profile__submit-button:disabled {
   opacity: 0.6;
 }
 
-.profile__submit-button_disabled:hover {
+.profile__submit-button:disabled:hover {
   opacity: 0.6;
   cursor: not-allowed;
 }
@@ -136,7 +136,7 @@
   color: #ee3465;
 }
 
-.profile__logout-button_disabled {
+.profile__logout-button:disabled {
   display: none;
 }
 

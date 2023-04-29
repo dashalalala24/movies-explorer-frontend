@@ -1,24 +1,48 @@
-import React from 'react';
-// import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
 
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import useFormAndValidation from '../../hooks/useFormAndValidation';
+import { VALIDATION } from '../../utils/constants';
 import './Profile.css';
 
-function Profile({ isFormActive, activateForm }) {
-  // const navigate = useNavigate();
+function Profile({ userData, isFormActive, toggleForm, onEditProfile, onLogout, isLoading }) {
+  const currentUser = useContext(CurrentUserContext);
 
-  // function goBack() {
-  //   navigate(-1, { replace: true });
-  // }
+  const { values, errors, isValid, handleChange, setValues, resetForm, setIsValid } =
+    useFormAndValidation({});
+
+  useEffect(() => {
+    setValues({ name: currentUser.name, email: currentUser.email });
+    setIsValid(true);
+  }, []);
+
+  useEffect(() => {
+    resetForm();
+    setValues({ name: currentUser.name, email: currentUser.email });
+    setIsValid(true);
+  }, [currentUser]);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const { name, email } = values;
+
+    onEditProfile({ name, email });
+  }
+
+  const isDisabled =
+    isFormActive &&
+    (!isValid || (values.name === currentUser.name && values.email === currentUser.email));
 
   return (
     <main className='profile'>
       <form
         className='profile__form'
         name='edit-profile'
-        autoComplete='off'>
+        autoComplete='off'
+        onSubmit={handleSubmit}>
         <div className='profile__container'>
-          <h3 className='profile__title'>{`Привет, exampleName!`}</h3>
+          <h3 className='profile__title'>{`Привет, ${userData.name}!`}</h3>
           <div className='profile__inputs-container'>
             <div className='profile__input-container'>
               <label
@@ -34,8 +58,10 @@ function Profile({ isFormActive, activateForm }) {
                 autoComplete='off'
                 minLength={2}
                 maxLength={30}
+                pattern={VALIDATION.name.pattern}
                 placeholder='Введите имя  '
-                value='exampleName'
+                value={values.name || ''}
+                onChange={handleChange}
                 required
                 disabled={!isFormActive}
               />
@@ -52,8 +78,10 @@ function Profile({ isFormActive, activateForm }) {
                 type='email'
                 name='email'
                 autoComplete='off'
+                pattern={VALIDATION.email.pattern}
                 placeholder='Введите электронную почту  '
-                value='example@mail.ru'
+                value={values.email || ''}
+                onChange={handleChange}
                 required
                 disabled={!isFormActive}
               />
@@ -64,26 +92,24 @@ function Profile({ isFormActive, activateForm }) {
           <span
             id='name-input-error'
             className='profile__error'>
-            {/* Здесь текст короткой ошибки */}
-            {/* Здесь текст просто гигантской ошибки длиною в 3 строки например.Здесь текст просто
-            гигантской ошибки длиною в 3 строки например.Здесь текст просто гигантской ошибки длиною
-            в 3 строки например. */}
+            {errors.name || errors.email}
           </span>
           <button
             className={`profile__button profile__edit-button ${
-              isFormActive ? 'profile__submit-button profile__submit-button_disabled' : ''
+              isFormActive ? 'profile__submit-button' : ''
             }`}
-            type='button'
-            onClick={activateForm}>
+            type={!isFormActive ? 'submit' : 'button'}
+            disabled={isDisabled}
+            onClick={toggleForm}>
             {isFormActive ? 'Сохранить' : 'Редактировать'}
           </button>
-          <Link
-            to='/'
-            className={`profile__button profile__logout-button ${
-              isFormActive ? 'profile__logout-button_disabled' : ''
-            }`}>
+          <button
+            type='button'
+            className='profile__button profile__logout-button'
+            disabled={isFormActive}
+            onClick={onLogout}>
             Выйти из аккаунта
-          </Link>
+          </button>
         </div>
       </form>
     </main>

@@ -43,7 +43,7 @@
   line-height: 16px;
   color: #fff;
   padding: 15px 0 15px 15px;
-  margin: 10px 0 10px;
+  margin: 10px 0 2px;
   border: none;
   background-color: #2f2f2f;
   border-radius: 8px;
@@ -77,10 +77,12 @@
 }
 
 .auth__error {
-  min-height: 10px;
+  min-height: 12px;
+  padding: 0 0 8px;
   font-size: 10px;
   line-height: 12px;
   color: #ee3465;
+  max-width: 396px;
 }
 
 .auth__button {
@@ -100,11 +102,10 @@
   opacity: 0.8;
 }
 
-.auth__button_disabled {
-  opacity: 0.7;
-}
-.auth__button_disabled:hover {
+.auth__button:disabled {
   opacity: 0.6;
+}
+.auth__button:disabled:hover {
   cursor: not-allowed;
 }
 
