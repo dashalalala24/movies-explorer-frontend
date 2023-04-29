@@ -25,7 +25,6 @@ function Movies({
 }) {
   const { moviesNumber, addMoviesRow } = useMoviesNumber();
 
-  console.log(movies);
   useEffect(() => {
     setErrorMessage('');
   }, []);

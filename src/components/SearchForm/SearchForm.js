@@ -35,8 +35,6 @@ function SearchForm({
   function handleSubmit(evt) {
     evt.preventDefault();
 
-    console.log('keyword', keyword);
-
     if (keyword) {
       setIsSearchFormValid(true);
       handleSearch(keyword, isShortMovies);
@@ -46,7 +44,6 @@ function SearchForm({
       if (currentPath === '/movies') {
       }
     }
-    console.log(errorMessage);
   }
 
   return (
