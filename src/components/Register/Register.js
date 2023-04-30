@@ -1,20 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
+import useFormAndValidation from '../../hooks/useFormAndValidation';
+import { VALIDATION } from '../../utils/constants';
 import AuthPage from '../AuthPage/AuthPage';
 
-function Register({ currentPath }) {
+function Register({ handleRegister }) {
+  const initialValues = {
+    name: '',
+    email: '',
+    password: '',
+  };
+
+  const { values, errors, isValid, handleChange, setIsValid, resetForm } =
+    useFormAndValidation(initialValues);
+
+  useEffect(() => {
+    resetForm();
+    setIsValid(false);
+  }, [setIsValid]);
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    let { name, email, password } = values;
+    handleRegister(name, email, password);
+    // resetForm();
+  }
+
   return (
     <AuthPage
-      currentPath={currentPath}
       formName='register'
       title='Добро пожаловать!'
       buttonText='Зарегистрироваться'
       linkText='Уже зарегистрированы?'
       linkTo='/signin'
-      link='Войти'>
+      link='Войти'
+      isValid={isValid}
+      onSubmit={handleSubmit}>
       <div className='auth__inputs'>
         <label
-          for='name-input'
+          htmlFor='name-input'
           className='auth__label auth__label_type_name'>
           Имя
         </label>
@@ -27,16 +51,19 @@ function Register({ currentPath }) {
           placeholder='Введите имя'
           minLength={2}
           maxLength={30}
+          pattern={VALIDATION.name.pattern}
+          value={values.name || ''}
+          onChange={handleChange}
           required
         />
         <span
           id='name-input-error'
           className='auth__error name-input-error'>
-          {/* Здесь будут ошибки */}
+          {errors.name}
         </span>
 
         <label
-          for='email-input'
+          htmlFor='email-input'
           className='auth__label auth__label_type_email'>
           E-mail
         </label>
@@ -46,17 +73,20 @@ function Register({ currentPath }) {
           type='email'
           name='email'
           autoComplete='off'
+          pattern={VALIDATION.email.pattern}
           placeholder='Введите электронную почту'
+          value={values.email || ''}
+          onChange={handleChange}
           required
         />
         <span
           id='email-input-error'
           className='auth__error email-input-error'>
-          {/* Здесь будут ошибки */}
+          {errors.email}
         </span>
 
         <label
-          for='password-input'
+          htmlFor='password-input'
           className='auth__label auth__label_type_password'>
           Пароль
         </label>
@@ -67,12 +97,14 @@ function Register({ currentPath }) {
           name='password'
           autoComplete='off'
           placeholder='Введите пароль'
+          value={values.password || ''}
+          onChange={handleChange}
           required
         />
         <span
           id='password-input-error'
           className='auth__error password-input-error'>
-          Здесь будут ошибки
+          {errors.password}
         </span>
       </div>
     </AuthPage>

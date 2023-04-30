@@ -1,10 +1,10 @@
 import React from 'react';
 import './NoResult.css';
 
-function NoResult() {
+function NoResult({ errorMessage }) {
   return (
     <div className='no-result'>
-      <p className='no-result__text'>Здесь пока ничего нет :(</p>
+      <p className='no-result__text'>{errorMessage}</p>
     </div>
   );
 }

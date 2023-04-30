@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 
 import './Header.css';
 
-function Header({ currentPath, isBurgerActive, onOpenMenu }) {
+function Header({ currentPath, loggedIn, isBurgerActive, onClickMenu }) {
   const isVisible =
     currentPath === '/' ||
     currentPath === '/movies' ||
@@ -16,40 +16,32 @@ function Header({ currentPath, isBurgerActive, onOpenMenu }) {
     <header className={`header ${currentPath === '/' ? 'header_type_landing' : ''}`}>
       <div className='header__container'>
         <Logo />
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <nav className='header__nav'>
-                <ul className='header__nav-list'>
-                  <li className='header__nav-list-item'>
-                    <Link
-                      className='header__nav-link'
-                      to='/signup'>
-                      Регистрация
-                    </Link>
-                  </li>
-                  <li className='header__nav-list-item'>
-                    <Link
-                      className='header__nav-link header__nav-link_type_login'
-                      to='/signin'>
-                      Войти
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            }
+        {loggedIn ? (
+          <Navigation
+            currentPath={currentPath}
+            isBurgerActive={isBurgerActive}
+            onClickMenu={onClickMenu}
           />
-          <Route
-            path='*'
-            element={
-              <Navigation
-                isBurgerActive={isBurgerActive}
-                onOpenMenu={onOpenMenu}
-              />
-            }
-          />
-        </Routes>
+        ) : (
+          <nav className='header__nav'>
+            <ul className='header__nav-list'>
+              <li className='header__nav-list-item'>
+                <Link
+                  className='header__nav-link'
+                  to='/signup'>
+                  Регистрация
+                </Link>
+              </li>
+              <li className='header__nav-list-item'>
+                <Link
+                  className='header__nav-link header__nav-link_type_login'
+                  to='/signin'>
+                  Войти
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   ) : null;

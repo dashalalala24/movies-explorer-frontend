@@ -4,18 +4,31 @@ import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import './AuthPage.css';
 
-function AuthPage({ currentPath, title, formName, children, buttonText, linkText, linkTo, link }) {
+function AuthPage({
+  isValid,
+  onSubmit,
+  title,
+  formName,
+  children,
+  buttonText,
+  linkText,
+  linkTo,
+  link,
+}) {
   return (
     <main className='auth'>
-      <Logo currentPath={currentPath} />
+      <Logo />
       <h3 className='auth__title'>{title}</h3>
       <form
         className='auth__form'
         name={formName}
-        autoComplete='off'>
+        autoComplete='off'
+        noValidate
+        onSubmit={onSubmit}>
         {children}
         <button
           className={`auth__button`}
+          disabled={!isValid}
           type='submit'>
           {buttonText}
         </button>
