@@ -11,8 +11,8 @@ const unifyMovieData = (movies) => {
     year: moviesCard.year,
     description: moviesCard.description,
     trailerLink: moviesCard.trailerLink,
-    image: `${IMAGES_URL}/${moviesCard.image.url}`,
-    thumbnail: `${IMAGES_URL}/${moviesCard.image.formats.thumbnail.url}`,
+    image: `${IMAGES_URL}${moviesCard.image.url}`,
+    thumbnail: `${IMAGES_URL}${moviesCard.image.formats.thumbnail.url}`,
   }));
 };
 
