@@ -55,10 +55,10 @@
 
 - Страница адаптирована под устройства с расширением от 320px до 1280px;
 - При разработке веб-приложения использованы CSS-технологии [grid](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout) и [flex](https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox), поддерживаемые большинством современных браузеров в последней версии;
-- При разработке веб-приложения использован язык программирования [JavaScript](https://ru.wikipedia.org/wiki/JavaScript);
-- Файловая структура по [БЭМ](https://ru.bem.info/methodology/filestructure/).
-- Проект реорганизован при помощи сборщика модулей [Webpack](https://ru.wikipedia.org/wiki/Webpack).
-- Бэкэнд развернут на виртуальной машине с помощью [Nginx](https://nginx.org/) и [PM2](https://pm2.keymetrics.io/)  
+- При разработке веб-приложения использован язык программирования [JavaScript](https://ru.wikipedia.org/wiki/JavaScript);  
+- Файловая структура по [БЭМ](https://ru.bem.info/methodology/filestructure/);  
+- Проект реорганизован при помощи сборщика модулей [Webpack](https://ru.wikipedia.org/wiki/Webpack);  
+- Бэкэнд развернут на виртуальной машине с помощью [Nginx](https://nginx.org/) и [PM2](https://pm2.keymetrics.io/).  
 
 *[Узнать подробности о поддержке проекта браузерами](https://caniuse.com/?search=grid)*
 
